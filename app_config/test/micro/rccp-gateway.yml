@@ -1,0 +1,95 @@
+server:
+  port: 8763
+
+
+spring:
+  profiles:
+    active: test
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: ${rccp.micro.servlet.multipart.max-file-size}
+      max-request-size: ${rccp.micro.servlet.multipart.max-request-size}
+
+eureka:
+  instance:
+    hostname: 192.168.1.80
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+zuul:
+  routes:
+    api-user:
+      path: /api-user/**
+      serviceId: rccp-user
+    api-oauth:
+      path: /api-oauth/**
+      sensitiveHeaders:
+      serviceId: rccp-oauth
+    api-id:
+      path: /api-id/**
+      serviceId: rccp-id
+    api-dfs:
+      path: /api-dfs/**
+      serviceId: rccp-dfs
+    api-area:
+      path: /api-area/**
+      serviceId: rccp-area
+    api-sms:
+      path: /api-sms/**
+      serviceId: rccp-sms
+    api-redis:
+      path: /api-redis/**
+      serviceId: rccp-redis
+    api-resource:
+      path: /api-resource/**
+      serviceId: rccp-resource
+    api-course:
+      path: /api-course/**
+      serviceId: rccp-course
+    api-management:
+      path: /api-management/**
+      serviceId: rccp-management
+    api-centre:
+      path: /api-centre/**
+      serviceId: rccp-centre
+    api-material:
+      path: /api-material/**
+      serviceId: rccp-material
+    api-industry:
+      path: /api-industry/**
+      serviceId: rccp-industry
+    api-mallmanagement:
+      path: /api-mallmanagemenet/**
+      serviceId: rccp-mall-manage
+    api-app:
+      path: /api-app/**
+      serviceId: rccp-api
+    api-resume:
+      path: /api-resume/**
+      serviceId: rccp-resume
+  add-proxy-headers: true
+
+#security:
+#  oauth2:
+#    client:
+#      access-token-uri: http://${eureka.instance.hostname}:8763/api-oauth/oauth/token
+#      user-authorization-uri: http://${eureka.instance.hostname}:8763/api-oauth/oauth/authorize
+#      client-id: webapp
+#    resource:
+#      user-info-uri: http://${eureka.instance.hostname}:8763/api-oauth/user
+#      prefer-token-info: false
+
+##设置超时时间 9 秒
+ribbon:
+  ReadTimeout: 900000
+  SocketTimeout: 100000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 900000
+
+

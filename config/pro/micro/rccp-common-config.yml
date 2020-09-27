@@ -1,0 +1,59 @@
+rccp:
+  micro:
+    serverIp: www.rccp.com
+
+    eurekaUserName: admin
+    eurekaPassword: admin
+    # 数据库配置
+    datasource:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://172.16.14.116:3306/rccp?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
+      search_url: jdbc:mysql://172.16.14.116:3306/rccp?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
+      username: root
+      password: zhongzhu11@#$
+      type: com.alibaba.druid.pool.DruidDataSource
+
+    #Redis服务器配置
+    redis:
+      host: 172.16.14.116
+      port: 6379
+      password: zhongzhu11@#$
+      timeout: 10000
+
+    #kafka配置
+    stream:
+      kafka:
+        binder:
+          brokers: 172.16.14.116:9092
+          zk-nodes: 172.16.14.116:2181
+
+    #上传文件大小配置
+    servlet:
+      multipart:
+        max-file-size: 500MB
+        max-request-size: 500MB
+#
+#    #分布式事务管理器地址
+#    tx-lcn:
+#      client:
+#        manager-address: 192.168.1.71:19990
+    #redis缓存使用的数据库索引
+    rediscache:
+      database: 2
+
+
+spring:
+  profiles:
+    active: prod
+
+#只有非正式环境会用到
+serverIp: ${rccp.micro.serverIp}
+
+#通过密码模式获取token地址
+TOKEN_PWD_URL: http://172.16.14.114:8764/oauth/token?grant_type=password
+secret: 123456
+
+#请求处理的超时时间
+ribbon.ReadTimeout: 120000
+#请求连接的超时时间
+ribbon.ConnectTimeout: 30000

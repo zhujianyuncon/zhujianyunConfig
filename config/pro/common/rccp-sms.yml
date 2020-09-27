@@ -1,0 +1,38 @@
+server:
+  port: 8802
+
+
+eureka:
+  instance:
+    hostname: www.rccp.com
+    prefer-ip-address: true
+    instance-id:  ${spring.cloud.client.ip-address}:${server.port}
+
+
+
+management:
+  security:
+    enabled: false
+
+#security:
+#  oauth2:
+#    resource:
+#      id: rccp-sms
+#      user-info-uri: http://${eureka.instance.hostname}:8764/user
+#      prefer-token-info: false
+
+#发送短信参数配置
+product: Dysmsapi
+serverURL: http://dysmsapi.aliyuncs.com
+accessKeyId: LTAICZtWTxGneJgX
+accessKeySecret: ahJozKLHA64fFQoThCJZUnIE9PFPuJ
+reg_model: SMS_153880862
+pwd_model: SMS_153950171
+login_model: SMS_153880862
+change_phone_model: SMS_153880862
+CHECK_CODE_LENGTH: 4
+
+#sn: SDK-BBX-010-25931
+#password: a^1-0c19-4c
+#ext: 7
+#serviceURL: http://sdk.entinfo.cn:8061/webservice.asmx

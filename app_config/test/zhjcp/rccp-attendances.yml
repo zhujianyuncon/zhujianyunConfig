@@ -1,0 +1,52 @@
+server:
+  port: 8907
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id:  ${spring.cloud.client.ip-address}:${server.port}
+
+
+spring:
+  datasource:
+    driverClassName: ${rccp.micro.datasource.driverClassName}
+    url: ${rccp.micro.datasource.url}
+    username: ${rccp.micro.datasource.username}
+    password: ${rccp.micro.datasource.password}
+    type: ${rccp.micro.datasource.type}
+  sleuth:
+    sampler:
+      percentage: 1.0
+  zipkin:
+    base-url: http://${eureka.instance.hostname}:8767/
+
+  cloud:
+    instance-count: 1
+    instance-index: 0
+    stream:
+      kafka:
+        binder:
+          brokers: ${rccp.micro.stream.kafka.binder.brokers}
+          zk-nodes: ${rccp.micro.stream.kafka.binder.zk-nodes}
+          auto-add-partitions: true
+          auto-create-topics: true
+          min-partition-count: 1
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+ribbon:
+  eureka:
+    enabled: true
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+
+debug: true
+logging:
+  level:
+    com.zhuj.micro.service.**.*: debug

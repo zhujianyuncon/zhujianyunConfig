@@ -1,0 +1,61 @@
+rccp:
+  micro:
+    serverIp: www.rccp.com
+    eurekaUserName: admin
+    eurekaPassword: admin
+    # 数据库配置
+    datasource:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://172.17.186.116:3306/rccp_v2?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
+      user_url: jdbc:mysql://172.17.186.116:3306/rccp_user?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
+      search_url: jdbc:mysql://172.17.186.110:3306/rccp_v2?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
+      username: root
+      password: zhongzhu11@#$
+      type: com.alibaba.druid.pool.DruidDataSource
+
+    #Redis服务器配置
+    redis:
+      host: 172.17.186.114
+      port: 6379
+      password: zhongzhu11@#$
+      timeout: 10000
+
+    #kafka配置
+    stream:
+      kafka:
+#        binder:
+#          brokers: 192.168.1.108:9092
+#          zk-nodes: 192.168.1.108:2181
+        binder:
+          brokers: 123.56.135.145:9092,101.200.89.97:9092,101.200.223.176:9092
+          zk-nodes: 172.17.186.115:2181
+
+    #上传文件大小配置
+    servlet:
+      multipart:
+        max-file-size: 500MB
+        max-request-size: 500MB
+
+    #redis缓存使用的数据库索引
+    rediscache:
+      database: 2
+
+
+spring:
+  profiles:
+    active: prod
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  time-zone: GMT+8
+
+#只有非正式环境会用到
+serverIp: ${rccp.micro.serverIp}
+
+#通过密码模式获取token地址
+TOKEN_PWD_URL: http://172.17.186.112:8763/api-oauth/oauth/token?grant_type=password
+secret: 123456
+
+#请求处理的超时时间
+ribbon.ReadTimeout: 120000
+#请求连接的超时时间
+ribbon.ConnectTimeout: 30000

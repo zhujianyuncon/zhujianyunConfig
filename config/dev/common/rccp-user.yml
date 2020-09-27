@@ -1,0 +1,107 @@
+server:
+  port: 8804
+  tomcat:
+    max-http-post-size: 0
+    max-http-header-size: 10485760
+    uri-encoding: UTF-8
+
+
+eureka:
+  instance:
+    hostname: www.rccp.com
+    prefer-ip-address: true
+    instance-id:  ${spring.cloud.client.ip-address}:${server.port}
+
+
+spring:
+  datasource:
+    driverClassName: ${rccp.micro.datasource.driverClassName}
+    url: ${rccp.micro.datasource.url}
+    username: ${rccp.micro.datasource.username}
+    password: ${rccp.micro.datasource.password}
+  sleuth:
+    sampler:
+      percentage: 1.0
+  zipkin:
+    base-url: http://${eureka.instance.hostname}:8767/
+
+  cloud:
+    instance-count: 1
+    instance-index: 0
+    stream:
+      kafka:
+        binder:
+          brokers: ${rccp.micro.stream.kafka.binder.brokers}
+          zk-nodes: ${rccp.micro.stream.kafka.binder.zk-nodes}
+          auto-add-partitions: true
+          auto-create-topics: true
+          min-partition-count: 1
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+
+# management:
+#   security:
+#     enabled: false
+# security:
+#   oauth2:
+#     resource:
+#       id: rccp-user
+#       user-info-uri: http://${eureka.instance.hostname}:8764/user
+#       prefer-token-info: false
+
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+debug: true
+logging:
+  level:
+    com.datian.micro.user.service.user.dao: debug
+
+
+
+#通过密码模式获取token地址
+TOKEN_PWD_URL: http://192.168.1.71:8764/oauth/token?grant_type=password
+
+
+#微信支付参数
+WXAPP_ID:
+APP_SECRET:
+WXMCH_ID:
+WXAPI_KEY:
+NOTIFY_URL: http://192.168.1.71:8804/wxRenotify
+UFDODER_URL: https://api.mch.weixin.qq.com/pay/unifiedorder
+CHECK_URL: https://api.mch.weixin.qq.com/pay/orderquery
+TRADE_TYPE: NATIVE
+SIGN_TYP: HMAC-SHA256
+
+
+#支付宝支付参数
+ALAPP_ID: 2021001163629730
+ALAPP_PRIVATE_ID: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCNb/vffv8eAi3xRcp/Lg953H7bwMWT2ZRPHX2uQi7FGwSza++nQKRipabshPug3T+RLKBgQSAp+ks8raGtyaA7i1kxX+4Xi2g/H6dsWp4nJJGnzjmYGzrP9YCie2E6ft6nn1yviEGUeA8oeIVG9WqluPdwcuwdL8np5WItHxIhTonUsjZNn8MD876uBqByUGUP28t7K2UpDevgHEKQl+P73EARXRJnRCkVXWMOnrw6rRoxK/HvsWPbVS3B03CFz0m2INBT4eEwkKMVkbXOcyts0rGaIJROJM5Z2ePHl6UKK3XxaXGOHb7k7Eot/shrCyT3MjRh9kb2E+R1j8QWXjvFAgMBAAECggEAYnpJNhkXio5b7LT6REkOz3t9/IYhS0tgXyGag31jUSv5vu91Qs/YZTMPoXkKNrw16V/YHozZ10CFqC8A9p7/aNYieSVhApW3NNRWXzRND9X/cIY/RbAX5/n44ajkTrVNVAq6nyFRAA4EB9q6eWihI9hAuNPboIrInIlxLReIKRWanv8xFmYgWRcr3aWRui6YiCof1I44BzoeExgBmHuYI4kxFTKCTX9LvHqUSvtf02UzHfeozoinU9PKDK5aSUSWzGiE433IVQ6X5iNsH9SxVwUcx3NwBQz8OYIGttm7PxqMN3ZKZisChIzOfUNGRDdzmTe5uRebSyN0eELwDVgvAQKBgQDTeVZ0zWMhYhuI3yDGlG929JGgIw4pkboY8Rp8v0KdpY+YdmdY15ehi86O/vrApdNPEciH2FBRFh8ZX13Ey8BjMz6W4EN/txaGys7IngolPSVH0133dV5F3OJl+iWupDI2w1zvM0WCUPvD8CinRPABEpaaTgYl6oQeNBFVPRROhQKBgQCrN5sEKIOkMHKnelgBdw188yUY1Q8kaa0ewptwPJUnpJJGKjDrzPwUwOPHlLBWaBee7hH0jO11avQPKhpMHSnYkHP57sJfDrK06IwOnQZwvibrpO3qU6lqIOPxtGvL22E/TaGuHhyaw8atcgS4KupiAAAup4Y0uL1FGVKJcIzcQQKBgHcw6oPGx1qnezF34XdLbk+zpOiHGZJgam1oZy9sdVV5XSfnhHRUf0g0DmYWXKp8TE9CjK3UQ+CQAVNBpw4mcPb4iQxstl6jiPTMFiSIvtsiTYLgJRQ2eL4Tsx8bEGYQcaTgE99WHJVIo75Z++/bMRLJsUyjMV/pgDGt0x8h3/IpAoGAfwtqngJF8+3zFWyFosipHH76ltt5OeakC8ARQI3jix/lXeTumflnTyr1mWEuG19vr4Etl41+oXK0GBCApNu68jP1qo3McmZgmjY3vpwrbDrcfFvMIeTkP5iaKv5aQlDNbwB2qNE1Hm2InaiN8e3+LqubdwLdZX9zCbPJd6wpCUECgYBzialnoW8hLtz+E3U2ppRGf1rk2yKY6x5FYCakdTIg8sc9xcJnLN5KPzDJOqUzY2Yt0bkwgUDCOZ0nVQahNKTi/W4nn0q3odvi0Ocu1lrblXdm1dRMl56vLSChCQ1nF11aonTYRbD2N1bnbsqposfwSJQbtn4HQzrCPMGPHj0xLQ==
+AL_PUBLIC_ID: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn8eieG/U7Uub1TZZtK8kRNG/2NXi0tvZ8GgPx6A+WswBYziqZEzT/f3M80obztTTyc/AYLMHU6QNMbkEHUzC7j1M2DNy4pbUaK3thMGKZSFJovjeSIMB7dYGZc4Zqx7XMVvJIl7P7eOy1ZGSxOW6ACxkXiXgT7m0RYivAnE8CT4bXH+uvlbHH7XsYRh0wr8i3ggf8kjjt1L9BHiZmY9Vbwpppi6TPxUiDxeeDNdC1jVvsuLIFjyEn5NKLLmKp4biT5nTlEVqC1KQ5LKRRhP6oZ0+v7HPgra2yR+wZtwpJclgZyWlnMYzCKB3asZBiGgy13ijG6Mvc0k9SMQmGlq+MQIDAQAB
+ALNOTIFY_URL: http://192.168.1.71:8804/alRenotify/NotifyURL
+ALRETURN_URL: http://192.168.1.71:8804/alRenotify/ReturnURL
+ALSIGN_TYPE: RSA2
+ALCHARSET: utf-8
+ALGETEWAY_URL: https://openapi.alipay.com/gateway.do
+AL_CALL_BACK: http://192.168.1.70/zhujianyunDev/#/PersonMeg
+
+
+
+# ## tx-manager 配置
+# tx-lcn:
+#   ribbon:
+#     loadbalancer:
+#       dtx:
+#         enabled: true
+#   logger:
+#     enabled: true
+#     driverClassName: ${rccp.micro.datasource.driverClassName}
+#     url: ${rccp.micro.datasource.url}
+#     username: ${rccp.micro.datasource.username}
+#     password: ${rccp.micro.datasource.password}
+#   client:
+#     manager-address: ${rccp.micro.tx-lcn.client.manager-address}

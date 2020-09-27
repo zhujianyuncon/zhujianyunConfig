@@ -1,0 +1,110 @@
+server:
+  port: 8763
+
+
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: ${rccp.micro.servlet.multipart.max-file-size}
+      max-request-size: ${rccp.micro.servlet.multipart.max-request-size}
+
+eureka:
+  instance:
+    hostname: www.rccp.com
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+zuul:
+  routes:
+    api-centre:
+      path: /api-centre/**
+      serviceId: rccp-centre
+
+    api-user:
+      path: /api-user/**
+      serviceId: rccp-user
+
+    api-oauth:
+      path: /api-oauth/**
+      sensitiveHeaders:
+      serviceId: rccp-oauth
+
+    api-id:
+      path: /api-id/**
+      serviceId: rccp-id
+
+    api-dfs:
+      path: /api-dfs/**
+      serviceId: rccp-dfs
+
+    api-area:
+      path: /api-area/**
+      serviceId: rccp-area
+
+    api-sms:
+      path: /api-sms/**
+      serviceId: rccp-sms
+
+    api-redis:
+      path: /api-redis/**
+      serviceId: rccp-redis
+
+    api-resource:
+      path: /api-resource/**
+      serviceId: rccp-resource
+
+    api-amusement:
+      path: /api-amusement/**
+      serviceId: rccp-amusement
+
+
+    api-attendances:
+      path: /api-attendances/**
+      serviceId: rccp-attendances
+
+    api-course:
+      path: /api-course/**
+      serviceId: rccp-course
+
+    api-management:
+      path: /api-management/**
+      serviceId: rccp-management
+
+    api-material:
+      path: /api-material/**
+      serviceId: rccp-material
+
+    api-industry:
+      path: /api-industry/**
+      serviceId: rccp-industry
+
+    api-mallmanagement:
+      path: /api-mallmanagemenet/**
+      serviceId: rccp-mall-manage
+
+    api-app:
+      path: /api-app/**
+      serviceId: rccp-api
+
+    api-resume:
+      path: /api-resume/**
+      serviceId: rccp-resume
+  add-proxy-headers: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 300000 #熔断响应时间
+  #ribbon超时配置 读取和等待时间都设置6秒
+ribbon:
+  #熔断读取时间
+  ReadTimeout: 60000
+  #连接等待时间
+  ConnectTimeout: 60000
+
+
