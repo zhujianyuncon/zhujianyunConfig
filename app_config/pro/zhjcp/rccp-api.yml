@@ -50,3 +50,6 @@ debug: true
 logging:
   level:
     com.zhuj.micro.service.**.*: debug
+
+#视频用户背景图
+videoBackGroundImage: https://rccp-dfs.oss-cn-beijing.aliyuncs.com/industry/pic/20200616182541762124673.jpg
