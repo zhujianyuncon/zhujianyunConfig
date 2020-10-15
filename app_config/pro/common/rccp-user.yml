@@ -110,3 +110,7 @@ TWOLEVEl: 100
 THREELEVEL: 500
 FOURLEVEL: 2000
 
+#IAP ios内购
+CERTIFICATEURL: https://buy.itunes.apple.com/verifyReceipt
+CERTIFICATEURLTEST: https://sandbox.itunes.apple.com/verifyReceipt
+
