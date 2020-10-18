@@ -67,6 +67,7 @@ zuul:
       path: /api-mallmanagemenet/**
       serviceId: rccp-mall-manage
   add-proxy-headers: true
+  sensitive-header:
   ribbon:
     eager-load:
       enabled: true

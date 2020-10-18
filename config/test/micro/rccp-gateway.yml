@@ -60,7 +60,7 @@ zuul:
       path: /api-industry/**
       serviceId: rccp-industry
   add-proxy-headers: true
-
+  sensitive-header:
 #security:
 #  oauth2:
 #    client:
