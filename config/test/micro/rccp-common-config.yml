@@ -8,6 +8,7 @@ rccp:
     datasource:
       driverClassName: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://192.168.1.108:3306/rccp_test?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
+      user_url: jdbc:mysql://192.168.1.108:3306/rccp_test_user?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
       search_url: jdbc:mysql://192.168.1.108:3306/rccp_test?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
       username: root
       password: zhongzhu11@#$
@@ -23,15 +24,20 @@ rccp:
     #kafka配置
     stream:
       kafka:
+        #        binder:
+        #          brokers: 192.168.1.108:9092
+        #          zk-nodes: 192.168.1.108:2181
         binder:
-          brokers: 192.168.1.108:9092
-          zk-nodes: 192.168.1.108:2181
+          minPartitionCount: 3  # 分区数量，主要就是为了减轻单台服务器的压力，扩大并发量
+          brokers: 192.168.1.85:9092,192.168.1.89:9092,192.168.1.80:9092 # kafka服务地址和端口
+          autoCreateTopics: true
+          autoAddPartitions: true
 
     #上传文件大小配置
     servlet:
       multipart:
-        max-file-size: 500MB
-        max-request-size: 500MB
+        max-file-size: -1
+        max-request-size: -1
 
     #分布式事务管理器地址
     tx-lcn:
@@ -50,7 +56,7 @@ spring:
 serverIp: ${rccp.micro.serverIp}
 
 #通过密码模式获取token地址
-TOKEN_PWD_URL: http://192.168.1.71:8764/oauth/token?grant_type=password
+TOKEN_PWD_URL: http://192.168.1.70:8084/api-oauth/oauth/token?grant_type=password
 secret: 123456
 
 #请求处理的超时时间

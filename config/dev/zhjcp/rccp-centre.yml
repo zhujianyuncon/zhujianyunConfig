@@ -4,7 +4,6 @@ server:
 
 eureka:
   instance:
-    hostname: www.rccp.com
     prefer-ip-address: true
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
 
@@ -12,10 +11,19 @@ eureka:
 spring:
   datasource:
     driverClassName: ${rccp.micro.datasource.driverClassName}
-    url: ${rccp.micro.datasource.url}
-    username: ${rccp.micro.datasource.username}
-    password: ${rccp.micro.datasource.password}
-    type: ${rccp.micro.datasource.type}
+    druid:
+      main-db:
+        url: ${rccp.micro.datasource.url}
+        username: ${rccp.micro.datasource.username}
+        password: ${rccp.micro.datasource.password}
+      user-db:
+        url: ${rccp.micro.datasource.user_url}
+        username: ${rccp.micro.datasource.username}
+        password: ${rccp.micro.datasource.password}
+      search-db:
+        url: ${rccp.micro.datasource.search_url}
+        username: ${rccp.micro.datasource.username}
+        password: ${rccp.micro.datasource.password}
   sleuth:
     sampler:
       percentage: 1.0
@@ -34,12 +42,18 @@ spring:
           auto-create-topics: true
           min-partition-count: 1
 
+ribbon:
+  eureka:
+    enabled: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 #通过密码模式获取token地址
-TOKEN_PWD_URL: http://192.168.1.71:8764/oauth/token?grant_type=password
 clientID: rccp-centre
-secret: 123456
 
 
 mybatis:

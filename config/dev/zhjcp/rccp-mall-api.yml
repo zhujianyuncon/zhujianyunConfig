@@ -1,14 +1,11 @@
 server:
-  port: 8904
-  tomcat:
-    max-http-post-size: 0
-    max-http-header-size: 104857600
+  port: 8701
+
 
 eureka:
   instance:
     prefer-ip-address: true
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
-
 
 
 spring:
@@ -45,17 +42,9 @@ spring:
           auto-create-topics: true
           min-partition-count: 1
 
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
 ribbon:
   eureka:
     enabled: true
-
-
 
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml

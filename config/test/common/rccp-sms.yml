@@ -4,21 +4,8 @@ server:
 
 eureka:
   instance:
-    hostname: www.rccp-test.com
     prefer-ip-address: true
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
-
-
-management:
-  security:
-    enabled: false
-
-#security:
-#  oauth2:
-#    resource:
-#      id: rccp-sms
-#      user-info-uri: http://${eureka.instance.hostname}:8764/user
-#      prefer-token-info: false
 
 #发送短信参数配置
 product: Dysmsapi

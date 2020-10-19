@@ -26,4 +26,3 @@ eureka:
   instance: #配置eureka 服务名字显示
     prefer-ip-address: true
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
-    hostname: www.rccp.com

@@ -4,7 +4,6 @@ server:
 
 eureka:
   instance:
-    hostname: www.rccp-test.com
     prefer-ip-address: true
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
 
@@ -34,15 +33,15 @@ spring:
           auto-create-topics: true
           min-partition-count: 1
 
-management:
-  security :
-    enabled: false
-
 ribbon:
   eureka:
     enabled: true
 
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
 

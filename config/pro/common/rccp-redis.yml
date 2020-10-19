@@ -5,16 +5,13 @@ server:
 
 eureka:
   instance:
-    hostname: www.rccp.com
     prefer-ip-address: true
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
 
 
 
 #
-management:
- security:
-  enabled: false
+
 
 #security:
 #  oauth2:

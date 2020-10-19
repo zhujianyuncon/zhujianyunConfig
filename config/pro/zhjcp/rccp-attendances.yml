@@ -1,8 +1,6 @@
 server:
-  port: 8904
-  tomcat:
-    max-http-post-size: 0
-    max-http-header-size: 104857600
+  port: 8907
+
 
 eureka:
   instance:
@@ -10,23 +8,13 @@ eureka:
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
 
 
-
 spring:
   datasource:
     driverClassName: ${rccp.micro.datasource.driverClassName}
-    druid:
-      main-db:
-        url: ${rccp.micro.datasource.url}
-        username: ${rccp.micro.datasource.username}
-        password: ${rccp.micro.datasource.password}
-      user-db:
-        url: ${rccp.micro.datasource.user_url}
-        username: ${rccp.micro.datasource.username}
-        password: ${rccp.micro.datasource.password}
-      search-db:
-        url: ${rccp.micro.datasource.search_url}
-        username: ${rccp.micro.datasource.username}
-        password: ${rccp.micro.datasource.password}
+    url: ${rccp.micro.datasource.url}
+    username: ${rccp.micro.datasource.username}
+    password: ${rccp.micro.datasource.password}
+    type: ${rccp.micro.datasource.type}
   sleuth:
     sampler:
       percentage: 1.0
@@ -54,8 +42,6 @@ management:
 ribbon:
   eureka:
     enabled: true
-
-
 
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml

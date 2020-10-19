@@ -2,7 +2,7 @@ server:
   port: 8902
   tomcat:
     max-http-post-size: 0
-    max-http-header-size: 10485760
+    max-http-header-size: 104857600
 
 
 eureka:
@@ -43,10 +43,14 @@ spring:
           auto-create-topics: true
           min-partition-count: 1
 
-#通过密码模式获取token地址
-TOKEN_PWD_URL: http://192.168.1.70:8764/oauth/token?grant_type=password
-clientID: rccp-material
-secret: 123456
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+ribbon:
+  eureka:
+    enabled: true
 
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml

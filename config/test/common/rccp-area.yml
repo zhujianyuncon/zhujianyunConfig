@@ -4,7 +4,6 @@ server:
 
 eureka:
   instance:
-    hostname: www.rccp-test.com
     prefer-ip-address: true
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
 
@@ -34,9 +33,12 @@ spring:
           auto-create-topics: true
           min-partition-count: 1
 
+
 management:
-  security :
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 
 ribbon:
@@ -51,3 +53,10 @@ debug: true
 logging:
   level:
     com.zhuj.micro.service.**.*: debug
+
+#电商ID
+EBUSINESSID: 1676265
+#电商加密私钥，快递鸟提供，注意保管，不要泄漏
+APIkey: 4d4f1e9c-9c2b-45e7-914c-812765c2f10c
+#快递鸟 请求url 物流即时查询
+ReqURL: http://api.kdniao.com/Ebusiness/EbusinessOrderHandle.aspx

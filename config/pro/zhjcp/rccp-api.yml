@@ -1,8 +1,6 @@
 server:
-  port: 8904
-  tomcat:
-    max-http-post-size: 0
-    max-http-header-size: 104857600
+  port: 8003
+
 
 eureka:
   instance:
@@ -10,17 +8,13 @@ eureka:
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
 
 
-
 spring:
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: ${rccp.micro.datasource.driverClassName}
     druid:
       main-db:
         url: ${rccp.micro.datasource.url}
-        username: ${rccp.micro.datasource.username}
-        password: ${rccp.micro.datasource.password}
-      user-db:
-        url: ${rccp.micro.datasource.user_url}
         username: ${rccp.micro.datasource.username}
         password: ${rccp.micro.datasource.password}
       search-db:
@@ -45,17 +39,9 @@ spring:
           auto-create-topics: true
           min-partition-count: 1
 
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
 ribbon:
   eureka:
     enabled: true
-
-
 
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
@@ -64,3 +50,21 @@ debug: true
 logging:
   level:
     com.zhuj.micro.service.**.*: debug
+
+#视频用户背景图
+videoBackGroundImage: https://rccp-dfs.oss-cn-beijing.aliyuncs.com/industry/pic/20200616182541762124673.jpg
+#七牛云相关
+qnaccessKey: tqVaB6AJYdSQ47oQ3TsylyOWeUoU0ciWHPKXCdiB
+qnsecretKey: HcdfAR0cxatx-yqaW8fr3KR9oe8vZg8-jP486BsY
+qnhubName: zhujianyun
+RTMPpubUrl: pili-publish.zhujianyun.com
+RTMPliveUrl: pili-live-rtmp.zhujianyun.com
+HLSliveUrl: pili-live-hls.zhujianyun.com
+HDLliveUrl: pili-live-hdl.zhujianyun.com
+liveImageUrl: pili-snapshot.zhujianyun.com
+#环信相关
+GRANT_TYPE: client_credentials
+HXCLIENT_ID: YXA6iBUfgfy0ROKS_S1qRz3ckQ
+HXCLIENT_SECRET: YXA6Yx55hK-C3VMD80sxPLG05fh-K1E
+HXAPP_NAME: demo
+HXORG_NAME: 1137201013239659

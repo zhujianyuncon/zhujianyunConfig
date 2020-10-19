@@ -4,7 +4,6 @@ server:
 
 eureka:
   instance:
-    hostname: www.rccp-test.com
     prefer-ip-address: true
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
   client:
@@ -15,6 +14,12 @@ spring:
      config:
        override-none: true
        override-system-properties: false
+
+ribbon:
+  eureka:
+    enabled: true
+
+
 
 #参数配置
 workerId: 1

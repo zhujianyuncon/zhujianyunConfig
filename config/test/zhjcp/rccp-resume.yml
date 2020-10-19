@@ -1,14 +1,11 @@
 server:
-  port: 8904
-  tomcat:
-    max-http-post-size: 0
-    max-http-header-size: 104857600
+  port: 8004
+
 
 eureka:
   instance:
     prefer-ip-address: true
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
-
 
 
 spring:
@@ -17,10 +14,6 @@ spring:
     druid:
       main-db:
         url: ${rccp.micro.datasource.url}
-        username: ${rccp.micro.datasource.username}
-        password: ${rccp.micro.datasource.password}
-      user-db:
-        url: ${rccp.micro.datasource.user_url}
         username: ${rccp.micro.datasource.username}
         password: ${rccp.micro.datasource.password}
       search-db:
@@ -54,8 +47,6 @@ management:
 ribbon:
   eureka:
     enabled: true
-
-
 
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml

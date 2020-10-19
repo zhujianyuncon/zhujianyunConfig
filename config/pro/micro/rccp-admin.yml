@@ -5,7 +5,6 @@ eureka:
   instance:
      prefer-ip-address: true
      instance-id: ${spring.cloud.client.ip_address}:${server.port}
-     hostname: www.rccp.com
 
 spring:
   security:

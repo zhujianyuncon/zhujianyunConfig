@@ -4,7 +4,6 @@ server:
 
 eureka:
   instance:
-    hostname: www.rccp.com
     prefer-ip-address: true
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
 
@@ -34,17 +33,16 @@ spring:
           auto-create-topics: true
           min-partition-count: 1
 
+ribbon:
+  eureka:
+    enabled: true
+
+
 management:
-  security :
-    enabled: false
-
-
-
-
-#通过密码模式获取token地址
-TOKEN_PWD_URL: http://192.168.1.71:8764/oauth/token?grant_type=password
-clientID: rccp-course
-secret: 123456
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 
 mybatis:
