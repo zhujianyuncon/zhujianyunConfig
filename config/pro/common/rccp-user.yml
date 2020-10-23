@@ -68,7 +68,8 @@ logging:
 
 #通过密码模式获取token地址
 #TOKEN_PWD_URL: http://172.17.186.112:8764/oauth/token?grant_type=password
-TOKEN_PWD_URL: http://172.17.186.112:8763/api-oauth/oauth/token?grant_type=password
+#TOKEN_PWD_URL: http://172.17.186.112:8763/api-oauth/oauth/token?grant_type=password
+TOKEN_PWD_URL: http://172.28.152.225:8763/api-oauth/oauth/token?grant_type=password
 
 
 
@@ -77,7 +78,7 @@ WXAPP_ID:
 APP_SECRET:
 WXMCH_ID:
 WXAPI_KEY:
-NOTIFY_URL: http://172.17.186.112:8804/wxRenotify
+NOTIFY_URL: http://172.28.152.225:8804/wxRenotify
 UFDODER_URL: https://api.mch.weixin.qq.com/pay/unifiedorder
 CHECK_URL: https://api.mch.weixin.qq.com/pay/orderquery
 TRADE_TYPE: NATIVE

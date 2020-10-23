@@ -6,16 +6,16 @@ rccp:
     # 数据库配置
     datasource:
       driverClassName: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://172.17.186.116:3306/rccp_v2?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
-      user_url: jdbc:mysql://172.17.186.116:3306/rccp_user?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
-      search_url: jdbc:mysql://172.17.186.110:3306/rccp_v2?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
+      url: jdbc:mysql://172.28.152.223:3306/rccp_v2?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
+      user_url: jdbc:mysql://172.28.152.223:3306/rccp_user?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
+      search_url: jdbc:mysql://172.28.152.219:3306/rccp_v2?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
       username: root
       password: zhongzhu11@#$
       type: com.alibaba.druid.pool.DruidDataSource
 
     #Redis服务器配置
     redis:
-      host: 172.17.186.114
+      host: 172.28.152.221
       port: 6379
       password: zhongzhu11@#$
       timeout: 10000
@@ -27,8 +27,8 @@ rccp:
 #          brokers: 192.168.1.108:9092
 #          zk-nodes: 192.168.1.108:2181
         binder:
-          brokers: 123.56.135.145:9092,101.200.89.97:9092,101.200.223.176:9092
-          zk-nodes: 172.17.186.115:2181
+          brokers: 123.56.163.15:9092,47.95.195.94:9092,47.94.168.49.176:9092
+          zk-nodes: 172.28.152.224:2181
 
     #上传文件大小配置
     servlet:
@@ -52,7 +52,8 @@ spring:
 serverIp: ${rccp.micro.serverIp}
 
 #通过密码模式获取token地址
-TOKEN_PWD_URL: http://172.17.186.112:8763/api-oauth/oauth/token?grant_type=password
+#TOKEN_PWD_URL: http://172.17.186.112:8763/api-oauth/oauth/token?grant_type=password
+TOKEN_PWD_URL: http://172.28.152.225:8763/api-oauth/oauth/token?grant_type=password
 secret: 123456
 
 #请求处理的超时时间
