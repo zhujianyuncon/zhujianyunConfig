@@ -53,3 +53,11 @@ logging:
 
 #key
 key: 5778a2910df64db1
+
+arena:
+  play:
+    win: 25
+    fail: 30
+    consum: 100
+    robotProbability: 50
+    firstNum: 100
