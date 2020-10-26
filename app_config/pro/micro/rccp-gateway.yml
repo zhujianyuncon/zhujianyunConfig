@@ -17,7 +17,9 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
 
+
 zuul:
+  sensitiveHeaders:
   routes:
     api-centre:
       path: /api-centre/**
@@ -92,6 +94,15 @@ zuul:
     api-resume:
       path: /api-resume/**
       serviceId: rccp-resume
+
+    api-mall:
+      path: /api-mall/**
+      serviceId: rccp-mall-api
+
+    api-order:
+      path: /api-order/**
+      serviceId: rccp-order
+
   add-proxy-headers: true
 hystrix:
   command:

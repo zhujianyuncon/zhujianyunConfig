@@ -1,5 +1,5 @@
 server:
-  port: 8702
+  port: 8701
 
 
 eureka:
@@ -53,5 +53,3 @@ debug: true
 logging:
   level:
     com.zhuj.micro.service.**.*: debug
-order:
-  overtime: 30
