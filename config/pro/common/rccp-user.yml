@@ -74,10 +74,10 @@ TOKEN_PWD_URL: http://172.28.152.225:8763/api-oauth/oauth/token?grant_type=passw
 
 
 #微信支付参数
-WXAPP_ID:
-APP_SECRET:
-WXMCH_ID:
-WXAPI_KEY:
+WXAPP_ID: wx540b5c4e9bfe69a3
+APP_SECRET: 5fab8e3042389a7c6cd6b01bb544dd5e
+WXMCH_ID: 1603301245
+WXAPI_KEY: y9KqdOsPnIGKAevsSEb45uOPfqQjJi1R
 NOTIFY_URL: http://172.28.152.225:8763/api-user/wxRenotify
 UFDODER_URL: https://api.mch.weixin.qq.com/pay/unifiedorder
 CHECK_URL: https://api.mch.weixin.qq.com/pay/orderquery
@@ -114,4 +114,17 @@ FOURLEVEL: 2000
 #IAP ios内购
 CERTIFICATEURL: https://buy.itunes.apple.com/verifyReceipt
 CERTIFICATEURLTEST: https://sandbox.itunes.apple.com/verifyReceipt
+
+#pagehelper分页插件配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql
+
+rate: 0.5
+
+withdrawalRate: 100
+#余额提现
+balanceTaxRate: 0.008
 
