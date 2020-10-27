@@ -63,8 +63,8 @@ logging:
     com.zhuj.micro.service.**.*: debug
 
 #七牛云相关
-qnaccessKey: tqVaB6AJYdSQ47oQ3TsylyOWeUoU0ciWHPKXCdiB
-qnsecretKey: HcdfAR0cxatx-yqaW8fr3KR9oe8vZg8-jP486BsY
+qnaccessKey: IgFqVYv0l245Skw1KPBje1PoAYaNUCoaXK4uM3ma
+qnsecretKey: v5WQEaoHlTknZ8Z3K1saclHzETbX2ougyYGPRA_A
 qnhubName: zhujianyun
 RTMPpubUrl: pili-publish.zhujianyun.com
 RTMPliveUrl: pili-live-rtmp.zhujianyun.com
