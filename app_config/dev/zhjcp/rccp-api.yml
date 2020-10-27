@@ -49,3 +49,20 @@ debug: true
 logging:
   level:
     com.zhuj.micro.service.**.*: debug
+#视频用户背景图
+videoBackGroundImage: https://rccp-dfs.oss-cn-beijing.aliyuncs.com/industry/pic/20200616182541762124673.jpg
+#七牛云相关
+qnaccessKey: IgFqVYv0l245Skw1KPBje1PoAYaNUCoaXK4uM3ma
+qnsecretKey: v5WQEaoHlTknZ8Z3K1saclHzETbX2ougyYGPRA_A
+qnhubName: zhujianyun
+RTMPpubUrl: pili-publish.zhujianyun.com
+RTMPliveUrl: pili-live-rtmp.zhujianyun.com
+HLSliveUrl: pili-live-hls.zhujianyun.com
+HDLliveUrl: pili-live-hdl.zhujianyun.com
+liveImageUrl: pili-snapshot.zhujianyun.com
+#环信相关
+GRANT_TYPE: client_credentials
+HXCLIENT_ID: YXA6kI93vM02QaWtdCDYliUF_A
+HXCLIENT_SECRET: YXA6wQNuk3pmpIr0ReGuussAXQaQSIc
+HXAPP_NAME: zhujianyunprod
+HXORG_NAME: 1137201013239659

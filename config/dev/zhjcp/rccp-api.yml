@@ -67,7 +67,7 @@ HDLliveUrl: pili-live-hdl.zhujianyun.com
 liveImageUrl: pili-snapshot.zhujianyun.com
 #环信相关
 GRANT_TYPE: client_credentials
-HXCLIENT_ID: YXA6iBUfgfy0ROKS_S1qRz3ckQ
-HXCLIENT_SECRET: YXA6Yx55hK-C3VMD80sxPLG05fh-K1E
-HXAPP_NAME: demo
+HXCLIENT_ID: YXA6kI93vM02QaWtdCDYliUF_A
+HXCLIENT_SECRET: YXA6wQNuk3pmpIr0ReGuussAXQaQSIc
+HXAPP_NAME: zhujianyunprod
 HXORG_NAME: 1137201013239659
