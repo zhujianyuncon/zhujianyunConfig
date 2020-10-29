@@ -103,6 +103,10 @@ zuul:
       path: /api-order/**
       serviceId: rccp-order
 
+    api-lease:
+      path: /api-lease/**
+      serviceId: rccp-lease
+
   add-proxy-headers: true
 hystrix:
   command:
