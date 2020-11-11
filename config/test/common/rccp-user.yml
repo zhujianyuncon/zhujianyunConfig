@@ -79,7 +79,7 @@ NOTIFY_URL: http://192.168.1.70:8084/api-user/wxRenotify
 UFDODER_URL: https://api.mch.weixin.qq.com/pay/unifiedorder
 CHECK_URL: https://api.mch.weixin.qq.com/pay/orderquery
 TRADE_TYPE: NATIVE
-SIGN_TYP: HMAC-SHA256
+SIGN_TYP: MD5
 
 
 #支付宝支付参数
