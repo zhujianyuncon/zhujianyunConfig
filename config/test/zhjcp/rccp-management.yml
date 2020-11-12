@@ -80,3 +80,18 @@ HXCLIENT_ID: YXA6iBUfgfy0ROKS_S1qRz3ckQ
 HXCLIENT_SECRET: YXA6Yx55hK-C3VMD80sxPLG05fh-K1E
 HXAPP_NAME: demo
 HXORG_NAME: 1137201013239659
+
+### xxl-job admin address list, such as "http://address" or "http://address01,http://address02"
+xxl.job.admin.addresses: http://192.168.1.71:8000/xxl-job-admin
+xxl.job.accessToken:
+### xxl-job executor appname
+xxl.job.executor.appname: rccp-management
+### xxl-job executor registry-address: default use address to registry , otherwise use ip:port if address is null
+xxl.job.executor.address:
+### xxl-job executor server-info
+xxl.job.executor.ip:
+xxl.job.executor.port: 9998
+### xxl-job executor log-path
+xxl.job.executor.logpath: ./jobhandler
+### xxl-job executor log-retention-days
+xxl.job.executor.logretentiondays: 30
