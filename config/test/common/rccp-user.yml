@@ -75,9 +75,14 @@ WXAPP_ID: wx540b5c4e9bfe69a3
 APP_SECRET: 5fab8e3042389a7c6cd6b01bb544dd5e
 WXMCH_ID: 1603301245
 WXAPI_KEY: y9KqdOsPnIGKAevsSEb45uOPfqQjJi1R
-NOTIFY_URL: http://192.168.1.70:8084/api-user/wxRenotify
+NOTIFY_URL: http://192.168.1.70:8084/api-user/wxRenotify/payCallBack
 UFDODER_URL: https://api.mch.weixin.qq.com/pay/unifiedorder
 CHECK_URL: https://api.mch.weixin.qq.com/pay/orderquery
+REFUND_URL: https://api.mch.weixin.qq.com/secapi/pay/refund
+CASHOUT_URL: https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers
+REFUND_NOTIFY_URL: http://192.168.1.70:8084/api-user/wxRenotify/refundCallBack
+WX_CERT_URL: https://content.zhujianyun.com/wxCertificate/apiclient_cert.p12
+REFUND_ORDER_URL: https://api.mch.weixin.qq.com/pay/refundquery
 TRADE_TYPE: NATIVE
 SIGN_TYP: MD5
 
