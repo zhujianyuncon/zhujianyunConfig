@@ -68,3 +68,13 @@ HXCLIENT_ID: YXA6kI93vM02QaWtdCDYliUF_A
 HXCLIENT_SECRET: YXA6wQNuk3pmpIr0ReGuussAXQaQSIc
 HXAPP_NAME: zhujianyunprod
 HXORG_NAME: 1137201013239659
+
+#获取天气
+weatherUrl: https://www.tianqiapi.com/api/
+#当前服务器ip
+weatherServerIp: http://123.57.85.64
+#天气图片路径
+weatherImgUrl: /weatherImg/cucumber/
+weatherAppid: 19383894
+weatherAppSecret: vG9LX2vn
+weatherVersion: v61

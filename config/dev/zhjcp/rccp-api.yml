@@ -67,7 +67,17 @@ HDLliveUrl: pili-live-hdl.zhujianyun.com
 liveImageUrl: pili-snapshot.zhujianyun.com
 #环信相关
 GRANT_TYPE: client_credentials
-HXCLIENT_ID: YXA6kI93vM02QaWtdCDYliUF_A
-HXCLIENT_SECRET: YXA6wQNuk3pmpIr0ReGuussAXQaQSIc
-HXAPP_NAME: zhujianyunprod
+HXCLIENT_ID: YXA6iBUfgfy0ROKS_S1qRz3ckQ
+HXCLIENT_SECRET: YXA6Yx55hK-C3VMD80sxPLG05fh-K1E
+HXAPP_NAME: demo
 HXORG_NAME: 1137201013239659
+
+#获取天气
+weatherUrl: https://www.tianqiapi.com/api/
+#当前服务器ip
+weatherServerIp: http://123.57.85.64
+#天气图片路径
+weatherImgUrl: /weatherImg/cucumber/
+weatherAppid: 19383894
+weatherAppSecret: vG9LX2vn
+weatherVersion: v61
