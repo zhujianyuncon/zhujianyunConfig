@@ -69,6 +69,8 @@ logging:
 #通过密码模式获取token地址
 #TOKEN_PWD_URL: http://172.17.186.112:8764/oauth/token?grant_type=password
 TOKEN_PWD_URL: http://172.17.186.112:8763/api-oauth/oauth/token?grant_type=password
+#通过手机号
+TOKEN_MOBILE_URL: http://172.17.186.112:8763/api-oauth/oauth/token?grant_type=mobile
 
 
 
