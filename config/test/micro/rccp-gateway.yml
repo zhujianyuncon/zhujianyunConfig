@@ -106,6 +106,10 @@ zuul:
     api-lease:
       path: /api-lease/**
       serviceId: rccp-lease
+    api-dataview:
+      path: /api-dataview/**
+      serviceId: rccp-dataview
+
   add-proxy-headers: true
 hystrix:
   command:
