@@ -1,0 +1,62 @@
+server:
+  port: 8909
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id:  ${spring.cloud.client.ip-address}:${server.port}
+
+
+spring:
+  datasource:
+    driverClassName: ${rccp.micro.datasource.driverClassName}
+    url: ${rccp.micro.datasource.search_url}
+    username: ${rccp.micro.datasource.username}
+    password: ${rccp.micro.datasource.password}
+    type: ${rccp.micro.datasource.type}
+  sleuth:
+    sampler:
+      percentage: 1.0
+  zipkin:
+    base-url: http://${eureka.instance.hostname}:8767/
+
+  cloud:
+    instance-count: 1
+    instance-index: 0
+    stream:
+      kafka:
+        binder:
+          brokers: ${rccp.micro.stream.kafka.binder.brokers}
+          zk-nodes: ${rccp.micro.stream.kafka.binder.zk-nodes}
+          auto-add-partitions: true
+          auto-create-topics: true
+          min-partition-count: 1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+ribbon:
+  eureka:
+    enabled: true
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+
+log4j.rootLogger: DEBUG,stdout,file
+log4j.additivity.org.apache: true
+
+log4j.appender.stdout: org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.threshold: INFO
+log4j.appender.stdout.layout: org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern: %-5p %c{1}:%L - %m%n
+
+log4j.appender.file: org.apache.log4j.DailyRollingFileAppender
+log4j.appender.file.layout: org.apache.log4j.PatternLayout
+log4j.appender.file.DatePattern: '.'yyyy-MM-dd-HH-mm
+log4j.appender.file.layout.ConversionPattern: %d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+log4j.appender.file.Threshold: INFO
+log4j.appender.file.append: true
+log4j.appender.file.File: D:/log/logs/foodie-api/imooc.log
+
