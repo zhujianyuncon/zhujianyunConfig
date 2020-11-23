@@ -70,7 +70,7 @@ HXAPP_NAME: zhujianyunprod
 HXORG_NAME: 1137201013239659
 
 #获取天气
-weatherUrl: https://www.tianqiapi.com/api/
+weatherUrl: http://www.tianqiapi.com/api/
 #当前服务器ip
 weatherServerIp: http://123.57.85.64
 #天气图片路径
