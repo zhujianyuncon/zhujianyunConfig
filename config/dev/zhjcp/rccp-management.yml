@@ -61,10 +61,6 @@ debug: true
 logging:
   level:
     com.zhuj.micro.service.**.*: debug
-  file:
-    path: D:/logs
-    name: manage.log
-    config: classpath:logging-config.xml
 
 #七牛云相关
 qnaccessKey: IgFqVYv0l245Skw1KPBje1PoAYaNUCoaXK4uM3ma
