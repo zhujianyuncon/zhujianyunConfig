@@ -61,7 +61,12 @@ debug: true
 logging:
   level:
     com.zhuj.micro.service.**.*: debug
-
+#文件包上传
+sftp.host: 192.168.1.71
+sftp.username: root
+sftp.path: ../home/apps
+sftp.password: zhongzhudata7890
+sftp.show.path: /home/apps
 #七牛云相关
 qnaccessKey: IgFqVYv0l245Skw1KPBje1PoAYaNUCoaXK4uM3ma
 qnsecretKey: v5WQEaoHlTknZ8Z3K1saclHzETbX2ougyYGPRA_A
