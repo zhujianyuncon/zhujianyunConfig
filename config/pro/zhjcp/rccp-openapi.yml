@@ -1,0 +1,80 @@
+server:
+  port: 8910
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id:  ${spring.cloud.client.ip-address}:${server.port}
+
+
+spring:
+  datasource:
+    driverClassName: ${rccp.micro.datasource.driverClassName}
+    url: ${rccp.micro.datasource.search_url}
+    username: ${rccp.micro.datasource.username}
+    password: ${rccp.micro.datasource.password}
+    type: ${rccp.micro.datasource.type}
+  sleuth:
+    sampler:
+      percentage: 1.0
+  zipkin:
+    base-url: http://${eureka.instance.hostname}:8767/
+
+  cloud:
+    instance-count: 1
+    instance-index: 0
+    stream:
+      kafka:
+        binder:
+          brokers: ${rccp.micro.stream.kafka.binder.brokers}
+          zk-nodes: ${rccp.micro.stream.kafka.binder.zk-nodes}
+          auto-add-partitions: true
+          auto-create-topics: true
+          min-partition-count: 1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+ribbon:
+  eureka:
+    enabled: true
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+
+debug: true
+logging:
+  level:
+    com.zhuj.micro.service.**.*: debug
+
+#-------------阿里云配置公共参数---------
+#阿里云 accessKeyId
+accessKeyId: LTAICZtWTxGneJgX
+#阿里云 accessKeySecret
+accessKeySecret: ahJozKLHA64fFQoThCJZUnIE9PFPuJ
+#-------------阿里云配置公共参数---------
+
+
+#环境配置
+endpoint: oss-cn-beijing.aliyuncs.com
+endpoint2: https://oss-cn-beijing.aliyuncs.com
+bucketName: rccp-dfs
+accessUrl: https://rccp-dfs.oss-cn-beijing.aliyuncs.com
+fileUrl: http://192.168.1.89:8081
+fastDfsUrl: http://192.168.1.89:8888
+fastdfs:
+  trackerServer: 192.168.1.89:22122
+  connectTimeout: 5000
+  networkTimeout: 30000
+  trackerHttpPort: 8888
+
+#阿里云转码配置
+
+
+#线上配置
+pipelineId: 261882f700fa4991aba01a6c35f0e1f0 #管道ID
+location: oss-cn-beijing #输入OSS Bucket所在数据中心（OSS Location）
+regionId: cn-beijing # #地域ID
+templateId: 1db19c1364614bd19c94cc542c3174f5   #转码模板ID
