@@ -88,3 +88,5 @@ pipelineId: 261882f700fa4991aba01a6c35f0e1f0 #管道ID
 location: oss-cn-beijing #输入OSS Bucket所在数据中心（OSS Location）
 regionId: cn-beijing # #地域ID
 templateId: 1db19c1364614bd19c94cc542c3174f5   #转码模板ID
+
+rsacoder.key: H3XZ9Fg041fEf/jQZBDpW2KYf7pis5Qq
