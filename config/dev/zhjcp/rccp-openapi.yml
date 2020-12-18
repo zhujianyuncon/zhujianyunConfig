@@ -1,6 +1,9 @@
 server:
   port: 8910
-  max-http-header-size: 102400
+  tomcat:
+    max-http-header-size: 16000
+    uri-encoding: UTF-8
+  max-http-header-size: 16000
 
 
 eureka:
