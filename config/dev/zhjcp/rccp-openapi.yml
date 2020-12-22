@@ -4,7 +4,7 @@ server:
     max-http-header-size: 16000
     uri-encoding: UTF-8
   max-http-header-size: 16000
-
+  max-http-post-size: 200*1024*1024
 
 eureka:
   instance:
