@@ -135,4 +135,4 @@ withdrawalRate: 100
 #云豆提现装换
 andCloudBeans: 0.01
 #余额提现
-balanceTaxRate: 0.008
+balanceTaxRate: 0
