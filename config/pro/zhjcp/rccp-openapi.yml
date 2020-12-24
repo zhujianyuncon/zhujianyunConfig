@@ -70,8 +70,7 @@ accessKeySecret: ahJozKLHA64fFQoThCJZUnIE9PFPuJ
 
 
 #环境配置
-endpoint: oss-cn-beijing.aliyuncs.com
-endpoint2: https://oss-cn-beijing.aliyuncs.com
+endpoint: https://oss-cn-beijing.aliyuncs.com
 bucketName: rccp-dfs
 accessUrl: https://rccp-dfs.oss-cn-beijing.aliyuncs.com
 fileUrl: http://192.168.1.89:8081
