@@ -63,3 +63,10 @@ debug: true
 logging:
   level:
     com.zhuj.micro.service.**.*: debug
+
+#环信相关
+GRANT_TYPE: client_credentials
+HXCLIENT_ID: YXA6kI93vM02QaWtdCDYliUF_A
+HXCLIENT_SECRET: YXA6wQNuk3pmpIr0ReGuussAXQaQSIc
+HXAPP_NAME: zhujianyunprod
+HXORG_NAME: 1137201013239659
