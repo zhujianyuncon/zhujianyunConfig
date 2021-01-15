@@ -98,3 +98,6 @@ sftp.port: 8089
 sftp.path: ../usr/local/nginx/html/downloadapp/guanwang/
 sftp.password: '%TpGm*#Ne1E*zhongzhu11@#$78'
 sftp.show.path: /downloadapp/guanwang/
+
+#个人橱窗默认背景
+windowBackGroundImage: https://rccp-dfs.oss-accelerate.aliyuncs.com/carousel/pic/799587354326208512background100.png
