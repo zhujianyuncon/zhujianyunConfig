@@ -32,6 +32,11 @@ spring:
       percentage: 1.0
   zipkin:
     base-url: http://${eureka.instance.hostname}:8767/
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: ${rccp.micro.servlet.multipart.max-file-size}
+      max-request-size: ${rccp.micro.servlet.multipart.max-request-size}
 
   cloud:
     instance-count: 1
