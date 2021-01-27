@@ -1,7 +1,6 @@
 server:
   port: 8904
 
-
 eureka:
   instance:
     prefer-ip-address: true
@@ -9,6 +8,10 @@ eureka:
 
 
 spring:
+  http:
+    multipart:
+      max-file-size: 500MB  # 指单个文件的大小
+      max-request-size: 500MB  # 上传文件的总大小
   datasource:
     driverClassName: ${rccp.micro.datasource.driverClassName}
     druid:
@@ -54,6 +57,7 @@ ribbon:
 
 
 
+
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
 
@@ -61,6 +65,13 @@ debug: true
 logging:
   level:
     com.zhuj.micro.service.**.*: debug
+
+sftp.host: 192.168.1.70
+sftp.username: root
+sftp.path: ../home/data/nginx/html/apps/
+sftp.port: 8081
+sftp.password: zhongzhudata7890
+sftp.show.path: /apps/
 
 #七牛云相关
 qnaccessKey: IgFqVYv0l245Skw1KPBje1PoAYaNUCoaXK4uM3ma
@@ -92,3 +103,8 @@ xxl.job.executor.port: 9998
 xxl.job.executor.logpath: ./jobhandler
 ### xxl-job executor log-retention-days
 xxl.job.executor.logretentiondays: 30
+
+#个人橱窗默认背景
+windowBackGroundImage: https://rccp-dfs.oss-accelerate.aliyuncs.com/carousel/pic/799587354326208512background100.png
+
+

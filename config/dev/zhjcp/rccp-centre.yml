@@ -63,3 +63,15 @@ debug: true
 logging:
   level:
     com.zhuj.micro.service.**.*: debug
+
+#环信相关
+GRANT_TYPE: client_credentials
+HXCLIENT_ID: YXA6iBUfgfy0ROKS_S1qRz3ckQ
+HXCLIENT_SECRET: YXA6Yx55hK-C3VMD80sxPLG05fh-K1E
+HXAPP_NAME: demo
+HXORG_NAME: 1137201013239659
+
+#小程序
+AUTH_URL: https://api.weixin.qq.com/sns/jscode2session
+APP_ID: wxdf5e81cd26e3c4ef
+APP_SECRET: 682198fa2de114a967ac6b9a237c0713

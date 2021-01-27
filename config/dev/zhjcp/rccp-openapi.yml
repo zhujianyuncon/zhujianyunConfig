@@ -1,10 +1,7 @@
 server:
   port: 8910
-  tomcat:
-    max-http-header-size: 16000
-    uri-encoding: UTF-8
-  max-http-header-size: 16000
-  max-http-post-size: 200*1024*1024
+  max-http-header-size: 102400
+
 
 eureka:
   instance:
@@ -15,19 +12,10 @@ eureka:
 spring:
   datasource:
     driverClassName: ${rccp.micro.datasource.driverClassName}
-    druid:
-      main-db:
-        url: ${rccp.micro.datasource.url}
-        username: ${rccp.micro.datasource.username}
-        password: ${rccp.micro.datasource.password}
-      user-db:
-        url: ${rccp.micro.datasource.user_url}
-        username: ${rccp.micro.datasource.username}
-        password: ${rccp.micro.datasource.password}
-      search-db:
-        url: ${rccp.micro.datasource.search_url}
-        username: ${rccp.micro.datasource.username}
-        password: ${rccp.micro.datasource.password}
+    url: ${rccp.micro.datasource.search_url}
+    username: ${rccp.micro.datasource.username}
+    password: ${rccp.micro.datasource.password}
+    type: ${rccp.micro.datasource.type}
   sleuth:
     sampler:
       percentage: 1.0
@@ -71,8 +59,7 @@ accessKeySecret: ahJozKLHA64fFQoThCJZUnIE9PFPuJ
 
 
 #环境配置
-endpoint: oss-cn-beijing.aliyuncs.com
-endpoint2: https://oss-cn-beijing.aliyuncs.com
+endpoint: https://oss-cn-beijing.aliyuncs.com
 bucketName: rccp-dfs
 accessUrl: https://rccp-dfs.oss-cn-beijing.aliyuncs.com
 fileUrl: http://192.168.1.89:8081

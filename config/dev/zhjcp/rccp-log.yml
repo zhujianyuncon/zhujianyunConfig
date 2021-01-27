@@ -1,0 +1,14 @@
+server:
+  port: 8911
+  max-http-header-size: 102400
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.108:3306/log_db?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&serverTimezone=GMT%2b8
+    user_url: jdbc:mysql://192.168.1.108:3306/log_db?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&serverTimezone=GMT%2b8
+    search_url: jdbc:mysql://192.168.1.108:3306/log_db?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&serverTimezone=GMT%2b8
+    username: root
+    password: zhongzhu11@#$
+    type: com.alibaba.druid.pool.DruidDataSource
+

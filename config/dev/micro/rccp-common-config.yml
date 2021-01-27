@@ -6,9 +6,9 @@ rccp:
     # 数据库配置
     datasource:
       driverClassName: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.168.1.108:3306/rccp_v2?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
-      user_url: jdbc:mysql://192.168.1.108:3306/rccp_user?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
-      search_url: jdbc:mysql://192.168.1.108:3306/rccp_v2?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&serverTimezone=GMT%2b8
+      url: jdbc:mysql://192.168.1.108:3306/rccp_v2?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&serverTimezone=GMT%2b8
+      user_url: jdbc:mysql://192.168.1.108:3306/rccp_user?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&serverTimezone=GMT%2b8
+      search_url: jdbc:mysql://192.168.1.108:3306/rccp_v2?useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&serverTimezone=GMT%2b8
       username: root
       password: zhongzhu11@#$
       type: com.alibaba.druid.pool.DruidDataSource
@@ -57,9 +57,12 @@ serverIp: ${rccp.micro.serverIp}
 #通过密码模式获取token地址
 #TOKEN_PWD_URL: http://192.168.1.71:8764/oauth/token?grant_type=password
 TOKEN_PWD_URL: http://192.168.1.70:8081/api-oauth/oauth/token?grant_type=password
+#通过手机号
+TOKEN_MOBILE_URL: http://192.168.1.70:8081/api-oauth/oauth/token?grant_type=mobile
 secret: 123456
 
 #请求处理的超时时间
 ribbon.ReadTimeout: 120000
 #请求连接的超时时间
 ribbon.ConnectTimeout: 30000
+

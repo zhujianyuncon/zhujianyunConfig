@@ -2,15 +2,12 @@ server:
   port: 8801
   tomcat:
     max-http-post-size: 0
-    max-http-header-size: 104857600
+    max-http-header-size: 10485760
 
 eureka:
   instance:
     prefer-ip-address: true
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
-  client:
-    registryFetchIntervalSeconds: 30
-    fetchRegistry: true
 
 
 
