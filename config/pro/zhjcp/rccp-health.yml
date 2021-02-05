@@ -1,6 +1,5 @@
 server:
   port: 8912
-  max-http-header-size: 102400
 
 
 eureka:
