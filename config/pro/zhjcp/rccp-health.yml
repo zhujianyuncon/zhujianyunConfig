@@ -1,5 +1,6 @@
 server:
-  port: 8901
+  port: 8912
+  max-http-header-size: 102400
 
 
 eureka:
@@ -11,19 +12,10 @@ eureka:
 spring:
   datasource:
     driverClassName: ${rccp.micro.datasource.driverClassName}
-    druid:
-      main-db:
-        url: ${rccp.micro.datasource.url}
-        username: ${rccp.micro.datasource.username}
-        password: ${rccp.micro.datasource.password}
-      user-db:
-        url: ${rccp.micro.datasource.user_url}
-        username: ${rccp.micro.datasource.username}
-        password: ${rccp.micro.datasource.password}
-      search-db:
-        url: ${rccp.micro.datasource.search_url}
-        username: ${rccp.micro.datasource.username}
-        password: ${rccp.micro.datasource.password}
+    url: ${rccp.micro.datasource.search_url}
+    username: ${rccp.micro.datasource.username}
+    password: ${rccp.micro.datasource.password}
+    type: ${rccp.micro.datasource.type}
   sleuth:
     sampler:
       percentage: 1.0
@@ -42,20 +34,14 @@ spring:
           auto-create-topics: true
           min-partition-count: 1
 
-ribbon:
-  eureka:
-    enabled: true
-
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-
-#通过密码模式获取token地址
-clientID: rccp-centre
-
-
+ribbon:
+  eureka:
+    enabled: true
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
 
@@ -64,14 +50,8 @@ logging:
   level:
     com.zhuj.micro.service.**.*: debug
 
-#环信相关
-GRANT_TYPE: client_credentials
-HXCLIENT_ID: YXA6kI93vM02QaWtdCDYliUF_A
-HXCLIENT_SECRET: YXA6wQNuk3pmpIr0ReGuussAXQaQSIc
-HXAPP_NAME: zhujianyunprod
-HXORG_NAME: 1137201013239659
-
-#小程序配置
 APPLET_AUTH_URL: https://api.weixin.qq.com/sns/jscode2session
 APPLET_APP_ID: wxdf5e81cd26e3c4ef
 APPLET_APP_SECRET: 682198fa2de114a967ac6b9a237c0713
+APPLET_GET_ACCESS_TOKEN_URL: https://api.weixin.qq.com/cgi-bin/token
+APPLET_MESSAGE_SEND_URL: https://api:weixin:qq:com/cgi-bin/message/subscribe/send
