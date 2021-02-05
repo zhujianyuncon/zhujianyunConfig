@@ -106,15 +106,14 @@ zuul:
     api-lease:
       path: /api-lease/**
       serviceId: rccp-lease
+
     api-dataview:
       path: /api-dataview/**
       serviceId: rccp-dataview
+
     api-health:
       path: /api-health/**
       serviceId: rccp-health
-    api-openapi:
-      path: /api-openapi/**
-      serviceId: rccp-openapi
 
   add-proxy-headers: true
 hystrix:
