@@ -12,10 +12,19 @@ eureka:
 spring:
   datasource:
     driverClassName: ${rccp.micro.datasource.driverClassName}
-    url: ${rccp.micro.datasource.search_url}
-    username: ${rccp.micro.datasource.username}
-    password: ${rccp.micro.datasource.password}
-    type: ${rccp.micro.datasource.type}
+    druid:
+      main-db:
+        url: ${rccp.micro.datasource.url}
+        username: ${rccp.micro.datasource.username}
+        password: ${rccp.micro.datasource.password}
+      user-db:
+        url: ${rccp.micro.datasource.user_url}
+        username: ${rccp.micro.datasource.username}
+        password: ${rccp.micro.datasource.password}
+      search-db:
+        url: ${rccp.micro.datasource.search_url}
+        username: ${rccp.micro.datasource.username}
+        password: ${rccp.micro.datasource.password}
   sleuth:
     sampler:
       percentage: 1.0
