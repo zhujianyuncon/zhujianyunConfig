@@ -62,4 +62,4 @@ APPLET_AUTH_URL: https://api.weixin.qq.com/sns/jscode2session
 APPLET_APP_ID: wxdf5e81cd26e3c4ef
 APPLET_APP_SECRET: 682198fa2de114a967ac6b9a237c0713
 APPLET_GET_ACCESS_TOKEN_URL: https://api.weixin.qq.com/cgi-bin/token
-APPLET_MESSAGE_SEND_URL: https://api:weixin:qq:com/cgi-bin/message/subscribe/send
+APPLET_MESSAGE_SEND_URL: https://api.weixin.qq.com/cgi-bin/message/subscribe/send
