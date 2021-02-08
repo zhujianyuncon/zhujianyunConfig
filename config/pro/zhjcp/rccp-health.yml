@@ -63,3 +63,18 @@ APPLET_APP_ID: wxdf5e81cd26e3c4ef
 APPLET_APP_SECRET: 682198fa2de114a967ac6b9a237c0713
 APPLET_GET_ACCESS_TOKEN_URL: https://api.weixin.qq.com/cgi-bin/token
 APPLET_MESSAGE_SEND_URL: https://api.weixin.qq.com/cgi-bin/message/subscribe/send
+
+### xxl-job admin address list, such as "http://address" or "http://address01,http://address02"
+xxl.job.admin.addresses: http://39.107.230.45:8000/xxl-job-admin
+xxl.job.accessToken:
+### xxl-job executor appname
+xxl.job.executor.appname: rccp-health
+### xxl-job executor registry-address: default use address to registry , otherwise use ip:port if address is null
+xxl.job.executor.address:
+### xxl-job executor server-info
+xxl.job.executor.ip:
+xxl.job.executor.port: 9996
+### xxl-job executor log-path
+xxl.job.executor.logpath: ./jobhandler
+### xxl-job executor log-retention-days
+xxl.job.executor.logretentiondays: 30
