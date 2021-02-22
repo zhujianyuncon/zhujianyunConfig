@@ -10,6 +10,11 @@ spring:
       enabled: true
       max-file-size: ${rccp.micro.servlet.multipart.max-file-size}
       max-request-size: ${rccp.micro.servlet.multipart.max-request-size}
+  datasource:
+    driverClassName: ${rccp.micro.datasource.driverClassName}
+    url: ${rccp.micro.datasource.user_url}
+    username: ${rccp.micro.datasource.username}
+    password: ${rccp.micro.datasource.password}
 
 eureka:
   instance:

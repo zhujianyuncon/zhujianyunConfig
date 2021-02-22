@@ -53,6 +53,14 @@ ribbon:
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
 
+redis:
+  database: 0          #Redis数据库索引（默认为0）
+  host: ${rccp.micro.redis.host}  # Redis服务器地址
+  port: ${rccp.micro.redis.port}  # Redis服务器连接端口
+  password: ${rccp.micro.redis.password}       #Redis服务器连接密码（默认为空）
+  timeout: ${rccp.micro.redis.timeout}       # 连接超时时间（毫秒）
+
+
 debug: true
 logging:
   level:
