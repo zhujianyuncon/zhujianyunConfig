@@ -73,6 +73,12 @@ TOKEN_PWD_URL: http://172.28.152.225:8763/api-oauth/oauth/token?grant_type=passw
 #通过手机号
 TOKEN_MOBILE_URL: http://172.28.152.225:8763/api-oauth/oauth/token?grant_type=mobile
 
+#微信小程序支付参数
+SMALL_WXAPP_ID: wxdf5e81cd26e3c4ef
+#支付秘钥
+SMALL_WXAPI_KEY: y9KqdOsPnIGKAevsSEb45uOPfqQjJi1R
+SMALL_APP_SECRET: 5fab8e3042389a7c6cd6b01bb544dd5e
+
 
 
 #微信支付参数

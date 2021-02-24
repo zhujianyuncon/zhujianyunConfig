@@ -71,6 +71,12 @@ TOKEN_PWD_URL: http://${eureka.instance.hostname}:8763/api-oauth/oauth/token?gra
 #通过手机号模式获取token地址
 TOKEN_MOBILE_URL: http://${eureka.instance.hostname}:8763/api-oauth/oauth/token?grant_type=mobile
 
+#微信小程序支付参数
+SMALL_WXAPP_ID: wxdf5e81cd26e3c4ef
+#支付秘钥
+SMALL_WXAPI_KEY: y9KqdOsPnIGKAevsSEb45uOPfqQjJi1R
+SMALL_APP_SECRET: 5fab8e3042389a7c6cd6b01bb544dd5e
+
 
 
 #微信支付参数
