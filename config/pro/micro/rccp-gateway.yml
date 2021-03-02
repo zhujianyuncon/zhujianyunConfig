@@ -120,6 +120,10 @@ zuul:
       path: /api-health/**
       serviceId: rccp-health
 
+    api-openapi:
+      path: /api-openapi/**
+      serviceId: rccp-openapi
+
   add-proxy-headers: true
 hystrix:
   command:
