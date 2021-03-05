@@ -103,3 +103,5 @@ sftp.show.path: /downloadapp/guanwang/
 windowBackGroundImage: https://rccp-dfs.oss-accelerate.aliyuncs.com/carousel/pic/799587354326208512background100.png
 
 taren.setShippingAddress: https://m.zhujianyun.com/guessGame
+
+managementPathPrefix: https://m.zhujianyun.com/

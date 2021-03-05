@@ -77,3 +77,6 @@ xxl.job.executor.port: 9999
 xxl.job.executor.logpath: ./jobhandler
 ### xxl-job executor log-retention-days
 xxl.job.executor.logretentiondays: 30
+
+#大转盘抽奖  无地址跳转链接
+ROTARY_DRAW_SKIP_DOMAIN: https://m.zhujianyun.com

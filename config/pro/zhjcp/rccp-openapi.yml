@@ -96,3 +96,6 @@ regionId: cn-beijing # #地域ID
 templateId: 1db19c1364614bd19c94cc542c3174f5   #转码模板ID
 
 rsacoder.key: H3XZ9Fg041fEf/jQZBDpW2KYf7pis5Qq
+
+#推送地址
+healthReport: https://m.zhujianyun.com/health_report/
