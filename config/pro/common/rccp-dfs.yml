@@ -75,9 +75,6 @@ fastdfs:
   networkTimeout: 30000
   trackerHttpPort: 8888
 
-#阿里云转码配置
-
-
 #线上配置
 pipelineId: 261882f700fa4991aba01a6c35f0e1f0 #管道ID
 location: oss-cn-beijing #输入OSS Bucket所在数据中心（OSS Location）
