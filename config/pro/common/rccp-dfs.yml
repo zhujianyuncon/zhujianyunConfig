@@ -66,7 +66,7 @@ endpoint: oss-cn-beijing.aliyuncs.com
 endpoint2: https://oss-cn-beijing.aliyuncs.com
 bucketName: rccp-dfs
 #accessUrl: https://rccp-dfs.oss-cn-beijing.aliyuncs.com
-accessUrl: https://static.zhujianyun.com/
+accessUrl: https://rccp-dfs.oss-accelerate.aliyuncs.com/
 fileUrl: http://192.168.1.89:8081
 fastDfsUrl: http://192.168.1.89:8888
 fastdfs:
